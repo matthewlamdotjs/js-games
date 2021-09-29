@@ -27,7 +27,11 @@ function sendSprite(img, lvl, yOffset){
         setTimeout(() => { target.remove() }, 2000);
     })
     document.getElementById('game-window').appendChild(sprite);
+    setTimeout(() => {
+        sprite.remove();
+    }, parseInt(`${window.getComputedStyle(sprite).animationDuration}`.replace('s', '000')));
 }
+
 let enemies_lvl1 = setInterval(() => {
     sendSprite(
         /* img */ `./imgs/enemies/stinky${enemies[Math.floor(Math.random()*enemies.length)]}.png`,
