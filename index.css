@@ -1,0 +1,98 @@
+:root{
+    --game-width: 800px;
+    --game-height: 500px;
+    --sprite-size: 100px;
+}
+body{
+    background-color: black;
+}
+#title{
+    margin: auto;
+    font-family: Rock Salt;
+    text-align: center;
+    font-size: 36px;
+    color: red;
+    animation: title-glow 1.2s infinite;
+    animation-timing-function: linear;
+}
+@keyframes title-glow {
+    0%{
+        text-shadow: 0 0 0px #FF0000, 0 0 0px #0000FF;
+    }
+    50%{
+        text-shadow: 0 0 16px #FF0000, 0 0 18px #0000FF;
+    }
+    100%{
+        text-shadow: 0 0 0px #FF0000, 0 0 0px #0000FF;
+    }
+}
+#game-window{
+    height: var(--game-height);
+    width: var(--game-width);
+    background-image: url(./imgs/space.png);
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    cursor: url(./imgs/greenhairs.png) 18 18, auto;
+    overflow: hidden;
+}
+#stats{
+    height: auto;
+    width: var(--game-width);
+    background-color: red;
+    margin: auto;
+    text-align: center;
+}
+#stats, h1 {
+    color: white;
+    font-family: Rock Salt;
+}
+.sprite{
+    position: absolute;
+    height: var(--sprite-size);
+    cursor: url(./imgs/crosshairs.png) 18 18, auto;
+}
+.lvl-1{
+    animation: lvl-1-motion 7s forwards;
+    animation-timing-function: linear;
+}
+@keyframes lvl-1-motion {
+    0% {
+        transform: translateX(calc(0 * var(--game-width))) rotate(20deg) translateY(15px);
+    }
+    20%{
+        transform: translateX(calc(0.2 * var(--game-width))) rotate(-20deg) translateY(0px);
+    }
+    40%{
+        transform: translateX(calc(0.4 * var(--game-width))) rotate(20deg) translateY(15px);
+    }
+    60%{
+        transform: translateX(calc(0.6 * var(--game-width))) rotate(-20deg) translateY(0px);
+    }
+    80% {
+        transform: translateX(calc(0.8 * var(--game-width))) rotate(20deg) translateY(15px);
+    }
+    99% {
+        transform: translateX(calc(var(--game-width) - var(--sprite-size))) rotate(-20deg) translateY(0px);
+    }
+    100% {
+        transform: translateX(calc(var(--game-width) - var(--sprite-size))) rotate(-20deg) translateY(0px);
+        visibility: hidden;
+    }
+}
+.dead{
+    animation: sprite-death 1s forwards;
+    filter: grayscale(100%);
+}
+@keyframes sprite-death {
+    0% {
+        height: var(--sprite-size);
+    }
+    100%{
+        height: 0px;
+        transform: translate(0, 0);
+        margin-left: calc(var(--game-width) * 0.5);
+        margin-top: calc(var(--game-height) * 0.5);
+        visibility: hidden;
+    }
+}

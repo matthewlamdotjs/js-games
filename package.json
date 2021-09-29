@@ -1,0 +1,19 @@
+{
+  "name": "js-games",
+  "version": "1.0.0",
+  "description": "some js games",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewlamdotjs/js-games.git"
+  },
+  "author": "Matthew Lam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthewlamdotjs/js-games/issues"
+  },
+  "homepage": "https://github.com/matthewlamdotjs/js-games#readme"
+}
