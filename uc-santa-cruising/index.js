@@ -79,13 +79,6 @@ function startGame(){
             }
             let walkerInterval = setInterval(() => {
                 if(counter < nextPositions.length){
-                    console.log(`
-                        left: ${left},
-                        playerIsLeft: ${playerIsLeft},
-                        isAirborne: ${isAirborne},
-                        counter: ${counter}
-                        ,\n
-                    `);
                     if(counter == 3 && !isAirborne && playerIsLeft == left){
                         takeDamage();
                     }
