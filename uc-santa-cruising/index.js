@@ -58,6 +58,12 @@ function startGame(){
     });
 
     let gamePlay = setInterval(() => {
+        const isDouble = Math.floor(Math.random()*2);
+        if(isDouble){
+            sendWalker('fast', true);
+            sendWalker('fast', false);
+            return;
+        }
         sendWalker('fast', Math.floor(Math.random()*2));
     }, frequency);
 
@@ -93,6 +99,9 @@ function startGame(){
     }
 
     function takeDamage(){
+        if(currentHealth == 0) return;
+        yoshi.classList.add('damage-taken');
+        setTimeout(() => { yoshi.classList.remove('damage-taken'); }, 400);
         currentHealth -= 10;
         checkGameOver();
         document.getElementById('score').innerHTML = `${currentHealth} / ${totalHealth}`;

@@ -108,3 +108,24 @@
 .yoshi-right.yoshi-jump{
     transform: rotate(-20deg) !important;
 }
+.damage-taken{
+    animation: damage .4s forwards;
+    animation-timing-function: linear;
+}
+@keyframes damage {
+    0%{
+        filter: invert();
+    }
+    20%{
+        filter: unset;
+    }
+    40%{
+        filter: invert();
+    }
+    80%{
+        filter: unset;
+    }
+    100%{
+        filter: unset;
+    }
+}
