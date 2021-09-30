@@ -1,0 +1,110 @@
+#game-window{
+    height: var(--game-height);
+    width: var(--game-width);
+    background-image: url(./imgs/drivingthroughtrees.gif);
+    background-position: center;
+    background-size: cover;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+#stats{
+    height: auto;
+    width: var(--game-width);
+    background-color: red;
+    margin: auto;
+    text-align: center;
+}
+#stats, h1 {
+    color: white;
+    font-family: Rock Salt;
+}
+.walker{
+    margin-top: 140px;
+    position: absolute;
+    transition: width 0.8s, height 0.8s, transform 0.8s;
+    transition-timing-function: linear;
+    z-index: 1;
+}
+.fast{
+    margin-left: calc(50% - 70px);
+}
+.slow{
+    margin-left: calc(50% - 50px);
+}
+/* First Position */
+.left-first-position{
+    transform: translate(-30px, 0px) !important;
+    height: 100px !important;
+    opacity: 0.5;
+}
+.right-first-position{
+    transform: translate(40px, 0px) !important;
+    height: 100px !important;
+    opacity: 0.5;
+}
+/* Second Position */
+.left-second-position{
+    transform: translate(-120px, 0px) !important;
+    height: 180px !important;
+}
+.right-second-position{
+    transform: translate(30px, 0px) !important;
+    height: 180px !important;
+}
+/* Third Position */
+.left-third-position{
+    transform: translate(-250px, 50px) !important;
+    height: 275px !important;
+}
+.right-third-position{
+    transform: translate(20px, 50px) !important;
+    height: 275px !important;
+}
+/* Fourth Position */
+.left-fourth-position{
+    transform: translate(-350px, 120px) !important;
+    z-index: 100;
+    height: 350px !important;
+    opacity: 0.7;
+}
+.right-fourth-position{
+    transform: translate(10px, 120px) !important;
+    z-index: 100;
+    height: 350px !important;
+    opacity: 0.7;
+}
+/* Final Position */
+.left-final-position{
+    transform: translate(-550px, 175px) !important;
+    z-index: 100;
+    height: 600px !important; 
+}
+.right-final-position{
+    transform: translate(-100px, 175px) !important;
+    z-index: 100;
+    height: 600px !important;
+}
+#yoshi{
+    height: 250px;
+    position: absolute;
+    z-index: 99;
+    transition: bottom 0.4s, margin-left 0.4s, transform 0.4s;
+}
+.yoshi-left{
+    bottom: -50px;
+    margin-left: 150px;
+    transform: rotate(20deg);
+}
+.yoshi-right{
+    bottom: -20px;
+    margin-left: 550px;
+    transform: rotate(-20deg);
+}
+.yoshi-jump{
+    transform: rotate(0deg);
+    bottom: 200px !important;
+}
+.yoshi-right.yoshi-jump{
+    transform: rotate(-20deg) !important;
+}

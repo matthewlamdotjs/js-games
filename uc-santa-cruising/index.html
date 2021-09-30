@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src='index.js'></script>
+        <link rel='stylesheet' href='index.css'>
+        <link rel='stylesheet' href='../index.css'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id='title'>UC Santa Cruising</div>
+        <div id='game-window'>
+            <div id='overlay'>
+                <p>
+                    Use the left and right arrow keys to move Yoshi to avoid<br>
+                    pedestrians and the spacebar to jump over them.
+                </p>
+                <button onclick="startGame()">START</button>
+            </div>
+            <img id='yoshi' class='yoshi-left' src='imgs/yoshi1.png'>
+        </div>
+        <div id='stats'>
+            <h4>Health: <span id='score'>100 / 100</span></h4>
+        </div>
+        <a href='../index.html'>
+            <div id='back-button'>
+                <h4>Back To Menu</h4>
+            </div>
+        </a>
+    </body>
+</html>
