@@ -29,7 +29,7 @@ function startGame(){
             yoshi.src = 'imgs/yoshi2.png';
             yoshi.classList.add('yoshi-jump');
             setTimeout(() => {
-                yoshi.src = 'imgs/yoshi3.png';
+                yoshi.src = playerIsLeft ? 'imgs/yoshi3.png' : 'imgs/yoshi1.png';
             }, 200);
             setTimeout(() => {
                 yoshi.classList.remove('yoshi-jump')

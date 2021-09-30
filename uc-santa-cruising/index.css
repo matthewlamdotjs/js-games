@@ -106,7 +106,7 @@
     bottom: 200px !important;
 }
 .yoshi-right.yoshi-jump{
-    transform: rotate(-20deg) !important;
+    transform: rotate(0deg) !important;
 }
 .damage-taken{
     animation: damage .4s forwards;
