@@ -1,3 +1,6 @@
+:root{
+    --yoshi-size: 250px;
+}
 #game-window{
     height: var(--game-height);
     width: var(--game-width);
@@ -75,27 +78,29 @@
     height: 600px !important;
 }
 #yoshi{
-    height: 250px;
+    height: var(--yoshi-size);
     position: absolute;
     z-index: 99;
     transition: bottom 0.4s, margin-left 0.4s, transform 0.4s;
 }
 .yoshi-left{
     bottom: -50px;
-    margin-left: 150px;
+    margin-left: 170px;
     transform: rotate(20deg);
 }
 .yoshi-right{
     bottom: -20px;
-    margin-left: 550px;
+    margin-left: 520px;
     transform: rotate(-20deg);
 }
 .yoshi-jump{
-    transform: rotate(0deg);
-    bottom: 200px !important;
+    bottom: 260px !important;
+}
+.yoshi-jump.yoshi-left{
+    transform: translateX(70px) rotate(35deg) !important;
 }
 .yoshi-right.yoshi-jump{
-    transform: rotate(0deg) !important;
+    transform: translateX(-25px) rotate(0deg) !important;
 }
 .damage-taken{
     animation: damage .4s forwards;
