@@ -79,6 +79,8 @@ a{
     text-align: center;
     font-size: 36px;
     color: red;
+    z-index: 999;
+    position: absolute;
 }
 #overlay > p{
     padding-top: calc(var(--game-height) * 0.3);
