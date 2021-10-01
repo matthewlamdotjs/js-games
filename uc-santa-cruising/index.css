@@ -8,17 +8,6 @@
     position: relative;
     overflow: hidden;
 }
-#stats{
-    height: auto;
-    width: var(--game-width);
-    background-color: red;
-    margin: auto;
-    text-align: center;
-}
-#stats, h1 {
-    color: white;
-    font-family: Rock Salt;
-}
 .walker{
     margin-top: 140px;
     position: absolute;

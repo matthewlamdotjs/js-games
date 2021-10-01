@@ -60,6 +60,17 @@ a{
 #back-button:hover{
     background-color: rgb(175, 235, 170);
 }
+#stats{
+    height: auto;
+    width: var(--game-width);
+    background-color: red;
+    margin: auto;
+    text-align: center;
+}
+#stats, h1 {
+    color: white;
+    font-family: Rock Salt;
+}
 #overlay{
     height: var(--game-height);
     width: var(--game-width);
