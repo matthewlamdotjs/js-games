@@ -1,3 +1,4 @@
+/* Game Params */
 const screen = { height: 500, width: 800 };
 const nextPositions = ['-first-position', '-second-position', '-third-position', '-fourth-position', '-final-position'];
 const transitionTime = 800;
@@ -6,10 +7,19 @@ const frequency = transitionTime * 3;
 let currentHealth = 100;
 let isAirborne = false;
 let playerIsLeft = true;
+/* Audio */
+const yoshiOw = new Audio('audio/yoshiow.mp3');
+const skateSound = new Audio('audio/skate.mp3');
+skateSound.loop = true;
+const ollieSound = new Audio('audio/ollie.mp3');
+const landingSound = new Audio('audio/landing.mp3');
 
 function startGame(){
+    // remove intro screen
     document.getElementById('overlay').style.display = 'none';
+    
     const yoshi = document.getElementById('yoshi');
+    skateSound.play();
 
     function moveLeft(){
         yoshi.classList.remove('yoshi-right');
@@ -26,6 +36,8 @@ function startGame(){
     function jump(){
         if(!isAirborne){
             isAirborne = true;
+            ollieSound.play();
+            skateSound.pause();
             yoshi.src = 'imgs/yoshi2.png';
             yoshi.classList.add('yoshi-jump');
             setTimeout(() => {
@@ -38,9 +50,14 @@ function startGame(){
                 yoshi.src = 'imgs/yoshi1.png';
                 isAirborne = false;
             }, 1200);
+            setTimeout(() => {
+                landingSound.play();
+                skateSound.play();
+            }, 1300);
         }
     }
 
+    // key controls
     document.addEventListener('keydown', (e) => {
         if(!isAirborne){
             switch(e.code){
@@ -57,6 +74,7 @@ function startGame(){
         }
     });
 
+    // main game loop
     let gamePlay = setInterval(() => {
         const isDouble = Math.floor(Math.random()*2);
         if(isDouble){
@@ -67,6 +85,7 @@ function startGame(){
         sendWalker('fast', Math.floor(Math.random()*2));
     }, frequency);
 
+    // helper function to send pedestrians down the road
     function sendWalker(type, left){
         if(currentHealth > 0){
             let counter = 0;
@@ -98,9 +117,11 @@ function startGame(){
         }
     }
 
+    // helper function to take damage when hitting a pedestrian
     function takeDamage(){
         if(currentHealth == 0) return;
         yoshi.classList.add('damage-taken');
+        yoshiOw.play();
         setTimeout(() => { yoshi.classList.remove('damage-taken'); }, 400);
         currentHealth -= 10;
         checkGameOver();
